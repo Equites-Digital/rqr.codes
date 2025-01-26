@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="style/styles.css">
 
+    <script defer src="code/qrcode.min.js"></script>
+    <script defer src="code/code.js"></script>
+
 </head>
 
 <body>
@@ -22,10 +25,12 @@
             <h2>Log in to the Resco Mobile CRM application. <span class="accent">Faster</span></h2>
 
             <p>
-                As a <a href="https://www.resco.net">Resco</a> developer, you probably have to manage multiple environments and log in to the Resco Mobile CRM application multiple times a day. This tool will help you to generate QR codes for your environments and log in to the Resco Mobile CRM application faster.
+                As a <a href="https://www.resco.net">Resco</a> developer, you probably have to manage multiple
+                environments and log in to the Resco Mobile CRM application multiple times a day. This tool will help
+                you to generate QR codes for your environments and log in to the Resco Mobile CRM application faster.
             </p>
 
-            <a href="#login-form-section" class="scroll-button">Generate a QR code!</a>
+            <a href="#login-form-section" class="button">Generate a QR code!</a>
         </section>
 
         <section id="login-form-section">
@@ -34,35 +39,69 @@
             <form id="login-form">
 
                 <div id="user-mode-form-field" class="form-field">
-                    <label for="user-mode">User Mode:</label>
+                    <label for="user-mode">User Mode</label>
                     <select name="user-mode" id="user-mode">
                         <option value="Standard">Standard</option>
                         <option value="External">External</option>
                         <option value="Anonymous">Anonymous</option>
-                        <option value="CurrentUser">CurrentUser</option>
                         <option value="OAuth2">OAuth2</option>
                     </select>
-                    <p></p>
                 </div>
+
+                <div id="url-form-field">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="url" placeholder="https://example.resco.net">
+                </div>
+
+                <div id="user-name-form-field">
+                    <label for="user-name">User Name</label>
+                    <input type="text" name="user-name" id="user-name" placeholder="admin@onmicrosoft.com">
+                </div>
+
+                <div id="password-form-field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="password">
+                </div>
+
+                <div id="password-confirmation-form-field">
+                    <label for="password-confirmation">Confirm Password</label>
+                    <input type="password" name="password-confirmation" id="password-confirmation" placeholder="password confirmation">
+                </div>
+
+                <div id="save-password-form-field">
+                    <label for="save-password">Save Password:</label>
+                    <input type="checkbox" name="save-password" id="save-password">
+                </div>
+
+                <div id="home-realm-form-field">
+                    <label for="home-realm">Home Realm</label>
+                    <input type="text" name="home-realm" id="home-realm"
+                        placeholder="https://login.microsoftonline.com">
+                </div>
+
+                <button id="submit-button" class="button">Generate QR Code</button>
+
             </form>
 
-                <canvas id="qr-code" width="300" height="300">
-                    Your browser does not support the HTML5 canvas element.
-                </canvas>
+            <div id="qr-code">
+            </div>
         </section>
 
         <section id="disclaimer">
             <h2>Disclaimer</h2>
 
             <p>
-                The data entered in the form never leaves this page. The data is used to generate a QR code that you can scan with the Resco Mobile CRM application. The data is not stored or sent to any server.
+                The data entered in the form never leaves this page. The data is used to generate a QR code that you can
+                scan with the Resco Mobile CRM application. The data is not stored or sent to any server.
             </p>
 
             <p>
-                This tool is provided as is. This tool is in no way affiliated with Resco. Use this tool at your own risk. The author of this tool is not responsible for any damages or losses caused by the use of this tool.
+                This tool is provided as is. This tool is in no way affiliated with Resco. Use this tool at your own
+                risk. The author of this tool is not responsible for any damages or losses caused by the use of this
+                tool.
             </p>
 
-            <a class="source-button" href="https://www.github.com/equites-digital/rqr.codes">View source code</a>
+            <a class="button" href="https://www.github.com/equites-digital/rqr.codes">View source code</a>
         </section>
 
 
